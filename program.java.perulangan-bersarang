@@ -1,0 +1,290 @@
+double hargaKelinci = 3000, hargaKambing = 3000, hargaTelur = 7000;
+        double hargaEmpal = 15000, hargaTahu = 5000, hargaAyam = 13000;
+        double grandTotal = 0, total = 0, uangBayar, kembalian;
+        double totalPemasukan = 0; 
+        int pilih1, pilih2, pilih3 = 0, jumlah;
+
+        do {
+            System.out.print("\n================================");
+            System.out.println("\nProgram Kasir");
+            System.out.println("1. Aplikasi Kasir \n2. Aplikasi Admin \n3. Aplikasi Owner \n4. Exit");
+            System.out.print("Pilih = ");
+            pilih1 = sc.nextInt();
+
+            switch (pilih1) {
+                case 1: // Aplikasi Kasir
+                    grandTotal = 0;
+                    do {
+                        System.out.print("\n================================");
+                        System.out.println("\nAplikasi Kasir");
+                        System.out.print("================================");
+                        System.out.println("\nWARUNG SEDERHANA");
+                        System.out.println("1. Sate \n2. Pecel \n3. Penyetan \n4. Selesai");
+                        System.out.print("Pilih = ");
+                        pilih2 = sc.nextInt();
+
+                        switch (pilih2) {
+                            case 1:
+                                do {
+                                    System.out.print("\n================================");
+                                    System.out.println("\nPilihan Sate :");
+                                    System.out.println("1. Sate Kelinci Rp " + hargaKelinci + "/tusuk ");
+                                    System.out.println("2. Sate Kambing Rp " + hargaKambing + "/tusuk");
+                                    System.out.println("3. Back");
+                                    System.out.print("Pilih = ");
+                                    pilih3 = sc.nextInt();
+
+                                    switch (pilih3) {
+                                        case 1:
+                                            System.out.println("\nSate Kelinci Rp " + hargaKelinci + "/tusuk");
+                                            System.out.print("Jumlah beli = ");
+                                            jumlah = sc.nextInt();
+                                            total = jumlah * hargaKelinci;
+                                            grandTotal += total;
+                                            break;
+
+                                        case 2:
+                                            System.out.println("\nSate Kambing Rp " + hargaKambing + "/tusuk");
+                                            System.out.print("Jumlah beli = ");
+                                            jumlah = sc.nextInt();
+                                            total = jumlah * hargaKambing;
+                                            grandTotal += total;
+                                            break;
+
+                                        case 3:
+                                            break;
+
+                                        default:
+                                            System.out.println("Pilihan anda tidak valid");
+                                            break;
+                                    }
+                                } while (pilih3 != 3);
+                                break;
+
+                            case 2:
+                                do {
+                                    System.out.print("\n================================");
+                                    System.out.println("\nPilihan Pecel : ");
+                                    System.out.println("1. Lauk Telur Rp " + hargaTelur + "/porsi");
+                                    System.out.println("2. Lauk Empal Rp " + hargaEmpal + "/porsi");
+                                    System.out.println("3. Back");
+                                    System.out.print("Pilih = ");
+                                    pilih3 = sc.nextInt();
+
+                                    switch (pilih3) {
+                                        case 1:
+                                            System.out.println("\nPecel Lauk Telur Rp " + hargaTelur + "/porsi");
+                                            System.out.print("Jumlah beli = ");
+                                            jumlah = sc.nextInt();
+                                            total = jumlah * hargaTelur;
+                                            grandTotal += total;
+                                            break;
+
+                                        case 2:
+                                            System.out.println("\nPecel Lauk Empal Rp " + hargaEmpal + "/porsi");
+                                            System.out.print("Jumlah beli = ");
+                                            jumlah = sc.nextInt();
+                                            total = jumlah * hargaEmpal;
+                                            grandTotal += total;
+                                            break;
+                                            
+                                        case 3:
+                                            break;
+
+                                        default:
+                                            System.out.println("Pilihan anda tidak valid");
+                                            break;
+                                    }
+                                } while (pilih3 != 3);
+                                break;
+                            case 3:
+                                do {
+                                    System.out.print("\n================================");
+                                    System.out.println("\nPilihan Penyetan :");
+                                    System.out.println("1. Penyetan Tahu/Tempe Rp " + hargaTahu + "/porsi");
+                                    System.out.println("2. Penyetan Ayam       Rp " + hargaAyam + "/porsi");
+                                    System.out.println("3. Back");
+                                    System.out.print("Pilih = ");
+                                    pilih3 = sc.nextInt();
+
+                                    switch (pilih3) {
+                                        case 1:
+                                            System.out.println("\nPenyetan Tahu/Tempe Rp " + hargaTahu + "/porsi");
+                                            System.out.print("Jumlah beli = ");
+                                            jumlah = sc.nextInt();
+                                            total = jumlah * hargaTahu;
+                                            grandTotal += total;
+                                            break;
+
+                                        case 2:
+                                            System.out.println("\nPenyetan Ayam Rp " + hargaAyam + "/porsi");
+                                            System.out.print("Jumlah beli = ");
+                                            jumlah = sc.nextInt();
+                                            total = jumlah * hargaAyam;
+                                            grandTotal += total;
+                                            break;
+
+                                        case 3:
+                                            break;
+
+                                        default:
+                                            System.out.println("Pilihan anda tidak valid");
+                                            break;
+                                    }
+                                } while (pilih3 != 3);
+                                break;
+                                
+                            case 4:
+                                System.out.println("\n================================");
+                                System.out.println("Total Pembelian: Rp " + grandTotal);
+                                System.out.print("Masukkan uang bayar : Rp ");
+                                uangBayar = sc.nextDouble();
+
+                                if (uangBayar >= grandTotal) {
+                                    kembalian = uangBayar - grandTotal;
+                                    System.out.println("Total kembalian anda adalah : Rp " + kembalian);
+                                    totalPemasukan += grandTotal;
+                                } else {
+                                    System.out.println("Uang anda tidak cukup. Transaksi dibatalkan.");
+                                }
+                                break;
+
+                            default:
+                                System.out.println("Pilihan anda tidak valid");
+                                break;
+                        }
+                    } while (pilih2 != 4);
+                    break;
+
+                case 2: // Aplikasi Admin
+                    do {
+                        System.out.print("\n================================");
+                        System.out.println("\nAplikasi Admin");
+                        System.out.print("================================");
+                        System.out.println("\nWARUNG SEDERHANA");
+                        System.out.println("1. Sate \n2. Pecel \n3. Penyetan \n4. Selesai");
+                        System.out.print("Pilih = ");
+                        pilih2 = sc.nextInt();
+
+                        switch (pilih2) {
+                            case 1:
+                                do {
+                                    System.out.print("\n================================");
+                                    System.out.println("\nUbah Harga Sate");
+                                    System.out.println("1. Kelinci Rp " + hargaKelinci + "/porsi");
+                                    System.out.println("2. Kambing Rp " + hargaKambing + "/porsi");
+                                    System.out.println("3. Back");
+                                    System.out.print("Pilih = ");
+                                    pilih3 = sc.nextInt();
+
+                                    switch (pilih3) {
+                                        case 1:
+                                            System.out.print("Masukkan harga baru untuk Sate Kelinci : ");
+                                            hargaKelinci = sc.nextDouble();
+                                            break;
+
+                                        case 2:
+                                            System.out.print("Masukkan harga baru untuk Sate Kambing : ");
+                                            hargaKambing = sc.nextDouble();
+                                            break;
+                                        case 3:
+                                            break;
+
+                                        default:
+                                            System.out.println("Pilihan anda tidak valid");
+                                            break;
+                                    }
+                                } while (pilih3 != 3);
+                                break;
+
+                            case 2:
+                                do {
+                                    System.out.print("\n================================");
+                                    System.out.println("\nUbah Harga Pecel");
+                                    System.out.println("1. Lauk Telur Rp " + hargaTelur + "/porsi");
+                                    System.out.println("2. Lauk Empal Rp " + hargaEmpal + "/porsi");
+                                    System.out.println("3. Back");
+                                    System.out.print("Pilih = ");
+                                    pilih3 = sc.nextInt();
+
+                                    switch (pilih3) {
+                                        case 1:
+                                            System.out.print("Masukkan harga baru untuk Pecel Lauk Telur : ");
+                                            hargaTelur = sc.nextDouble();
+                                            break;
+
+                                        case 2:
+                                            System.out.print("Masukkan harga baru untuk Pecel Lauk Empal : ");
+                                            hargaEmpal = sc.nextDouble();
+                                            break;
+                                            
+                                        case 3:
+                                            break;
+
+                                        default:
+                                            System.out.println("Pilihan anda tidak valid");
+                                            break;
+                                    }
+                                } while (pilih3 != 3);
+                                break;
+                                
+                            case 3:
+                                do {
+                                    System.out.print("\n================================");
+                                    System.out.println("\nUbah Harga Penyetan");
+                                    System.out.println("1. Penyetan Tahu/Tempe Rp " + hargaTahu + "/porsi");
+                                    System.out.println("2. Penyetan Ayam       Rp " + hargaAyam + "/porsi");
+                                    System.out.println("3. Back");
+                                    System.out.print("Pilih = ");
+                                    pilih3 = sc.nextInt();
+
+                                    switch (pilih3) {
+                                        case 1:
+                                            System.out.print("Masukkan harga baru untuk Penyetan Tahu/Tempe : ");
+                                            hargaTahu = sc.nextDouble();
+                                            break;
+
+                                        case 2:
+                                            System.out.print("Masukkan harga baru untuk Penyetan Ayam : ");
+                                            hargaAyam = sc.nextDouble();
+                                            break;
+                                            
+                                        case 3:
+                                            break;
+
+                                        default:
+                                            System.out.println("Pilihan anda tidak valid");
+                                            break;
+                                    }
+                                } while (pilih3 != 3);
+                                break;
+                                
+                            case 4:
+                                break;
+
+                            default:
+                                System.out.println("Pilihan anda tidak valid");
+                                break;
+                        }
+                    } while (pilih2 != 3);
+                    break;
+
+                case 3: // Aplikasi Owner
+                    System.out.print("\n================================");
+                    System.out.println("\nAplikasi Owner");
+                    System.out.print("================================");
+                    System.out.println("\nWARUNG SEDERHANA");
+                    System.out.println("Total Semua Pemasukan : Rp " + totalPemasukan);
+                    break;
+
+                case 4:
+                    System.out.println("Keluar dari program. Terima kasih!");
+                    break;
+
+                default:
+                    System.out.println("Pilihan anda tidak valid");
+                    break;
+            }
+        } while (pilih1 != 4);
+    }
+}
